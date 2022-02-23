@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<meta charset="utf-8">
+	<title>Katalog samochodowy</title>
+	<meta name="description" content="Stwórz wymarzony model swojego samochodu!">
+	<meta name="keywords" content="samochód, katalog, salon, nowe auto">
+	<meta name="author" content="Jan Nowak">
+	
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
+	
+	<link rel="stylesheet" href="main.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+	
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+	
+</head>
+
+<body>
+
+	<header>
+	
+		<h1>Wybierz konfigurację samochodu</h1>
+
+	</header>
+	
+	<main>
+	
+		<article>
+		
+			<form action="order.php" method="post"> <!--action-który skrypt PHP ma przetworzyć dane, które przyjdą z formularza--> <!-- method-jakij metody http użyć do przesyłania danych z naszego formularza (get,post)-->
+			
+			
+<!-------------------Formularz listy jednokrotnego wyboru--------------->
+			
+			<div class="row">
+			
+				<fieldset>
+				
+					<legend>Rodzaj nadwozia</legend><!--obramowanie znaczników-->
+				
+				 <div><label> <input type="radio" value="1"name="nadwozie"> Hatchback</label></div><!--input dane wejściowe, powinny mieć ustawiony atrybut name--> <!--label etykieta formularza-->
+				 <div><label> <input type="radio" value="2" name="nadwozie"> Kabriolet</label></div>
+				 <div><label> <input type="radio" value="3"name="nadwozie" checked> Kombi</label></div> <!-- checked domyślnie wybrane pole po odświeżeniu-->
+				 
+				</fieldset>
+				
+				</div>
+	
+<!--------------Formularz listy jednokrotnego wyboru- lista rozwijana------------>
+	
+			<div class="row">
+			
+				<label for="silnik">Rodzaj silnika</label>
+				<select id="silnik" name="silnik">
+				
+					<option value="w">wysokoprężny</option>
+					<option value="b"selected>benzynowy</option> <!--selected to samo co checked dla listy z inputami-->
+					<option value="e">elektryczny</option>
+					<option value="h">hybrydowy</option>
+				
+				</select>
+				
+			</div>
+			
+<!-------------------Formularz listy wielokrotnego wyboru--------------->
+
+		<div class="row">
+		
+			<fieldset>
+			
+				<legend>Wyposażenie samochodu</legend>
+				
+			<div class="col">
+				<div><label><input type="checkbox" name="wyp[]"value="1"disabled checked>klimatyzacja</label></div>
+				<div><label><input type="checkbox" name="wyp[]"value="2" disabled checked>systemy: ESP i ABS</label></div> <!--disabled- pole niekatynwe-->
+				<div><label><input type="checkbox"name="wyp[]" value="3">tapicerka skórzana</label></div>
+			</div>
+				
+			<div class="col">
+				<div><label><input type="checkbox" name="wyp[]" value="4">tempomat</label></div>
+				<div><label><input type="checkbox" name="wyp[]" value="5">tylny spojler</label></div>
+			</div>
+
+			<div class="col">
+				<div><label><input type="checkbox" name="wyp[]" value="6">reflektory</label></div>
+				<div><label><input type="checkbox" name="wyp[]" value="7">radio</label></div>
+			<div>
+		
+			</fieldset>
+		
+		</div>
+
+<!-------------------Formularz listy wielokrotnego wyboru--------------->
+
+		<div class="row">
+			
+			<label for="choinka">Jakie choinki zapachowe?</label>
+			
+			<div style="margin-top:10px;">
+				<select id="choinka" name="choinka[]" multiple size="4"><!--size określa ile jest widocznych wierszy rozwijanych-->
+				
+					<option value="k">kokosowa</option>
+					<option value="c"selected>cytrynowa</option> <!--selected to samo co checked dla listy z inputami-->
+					<option value="t">truskawkowa</option>
+					<option value="b">brzoskwiniowa</option>
+				
+				</select>
+			</div>
+							
+		</div>
+		
+		<div class="row">
+		
+			<label>Imię <input type="text" name="imie" placeholder="Jan"></label>
+			<label>Hasło <input type="password" name="haslo"></label>
+			<label>Szukaj <input type="search" name="fraza"></label>
+		
+		</div>	
+		
+		<div class="row">
+		
+			<label>Ile kluczyków<input type="number" name="kluczyk" step="1"></label><!-- step zmiana wartość-->
+		
+		</div>
+		
+<!---------------------Znaczniki dostępne w html------------------------>
+		
+		<div class="row">
+		
+			<input type="submit" value="Zamawiam"> <!--submit powoduje wysłanie formularza-->
+			
+			<input type="button" value="Zamawiam"><!--formularze o type button nie wyślą formularza-->
+			
+			<button></button> <!--taki znacznik pozwala wstawiać też obrazki zamiast samego tekstu jak w input i też wyśle formularz no chyba że pomiedzy wstawi się type="button"-->
+			
+		
+		</div>
+			</form>		
+			
+		</article>
+		
+	</main>
+
+</body>
+</html>
